@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <title>Baby Names</title>
+</head>
+
+<body>
+  <h1>Randomly Stumble Upon the Perfect Baby Name</h1>
+  <div id="app">
+    <form v-on:submit.prevent="getRandomName">
+      <button type="submit">Get a Random Name</button>
+    </form>
+    <h2>{{Name}}</h2>
+    <div v-if="Gender">
+      <p>Gender: {{Gender}}</p>
+    </div>
+    <div v-if="Language">
+      <p>Language: {{Language}}</p>
+    </div>
+    <h3>Already have a name in mind? Enter a name here for more info:</h3>
+    <form v-on:submit.prevent="getNameInfoBefore">
+      <input v-model="addedName" placeholder="Name"></p>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+<footer>
+  <a href="https://github.com/jaronwakley/textToSpeech">
+    <button>Link to Github</button>
+  </a>
+</footer>
+
+</html>
